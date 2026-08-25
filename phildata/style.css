@@ -1,0 +1,676 @@
+body {
+    background-color: #f5f6f8;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #1d2433;
+}
+
+.sidebar {
+    width: 290px;
+    min-height: 100vh;
+    height: auto;
+    background: linear-gradient(180deg, #265718 0%, #1f4b13 100%);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h4 {
+    font-weight: bold;
+    line-height: 1.2;
+    margin-top: 0.8rem;
+}
+
+.sidebar-subtitle {
+    color: #c6dfb9;
+    margin-bottom: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: #cce5cc;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 12px 14px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+.sidebar ul li a i {
+    font-size: 1.15rem;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: #4a8b2f;
+    color: white;
+}
+
+.admin-pill {
+    background: #1d6d3e;
+    color: #d7f5d6;
+    border-radius: 8px;
+    font-size: 0.74rem;
+    padding: 2px 7px;
+    margin-left: 8px;
+}
+
+.user-box {
+    color: white;
+    margin-top: auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding-top: 1.4rem;
+}
+
+.main-content {
+    background: #f5f6f8;
+}
+
+.app-shell {
+    min-height: 100vh;
+}
+
+.birds-page {
+    padding-left: 2.2rem !important;
+    padding-right: 2.2rem !important;
+}
+
+.page-head h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #16243e;
+}
+
+.page-head p {
+    font-size: 1.15rem;
+}
+
+.records-tabs {
+    display: inline-flex;
+    gap: 0.35rem;
+    background: #e8e9ed;
+    border-radius: 16px;
+    padding: 0.3rem;
+}
+
+.tab-pill {
+    border: none;
+    border-radius: 12px;
+    padding: 0.35rem 1rem;
+    background: transparent;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.tab-pill.active {
+    background: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.birds-card {
+    background: #f7f8fa;
+    border: 1px solid #e2e5ea;
+    border-radius: 16px;
+    padding: 1.6rem;
+}
+
+.birds-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.birds-card-head h2 {
+    font-size: 2rem;
+    margin: 0;
+    font-weight: 700;
+    color: #111827;
+}
+
+.add-species-btn {
+    background-color: #255716;
+    border-color: #255716;
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 0.55rem 1rem;
+}
+
+.add-species-btn:hover {
+    background-color: #2f6a1d;
+    border-color: #2f6a1d;
+}
+
+.add-species-btn i {
+    margin-right: 0.45rem;
+}
+
+.search-wrap {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.search-wrap i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #8b93a1;
+}
+
+.search-wrap input {
+    border: 1px solid #e0e3e8;
+    background: #eef0f4;
+    border-radius: 10px;
+    min-height: 44px;
+    padding-left: 40px;
+    font-size: 1.03rem;
+}
+
+.table-wrap {
+    border: 1px solid #d7dbe2;
+    border-radius: 12px;
+    overflow-x: auto;
+    background: #fff;
+}
+
+#speciesTable {
+    min-width: 1150px;
+}
+
+#speciesTable thead th {
+    background: #f4f5f8;
+    color: #1e2431;
+    font-size: 0.96rem;
+    font-weight: 700;
+    border-bottom: 1px solid #d9dde4;
+    white-space: nowrap;
+}
+
+#speciesTable tbody td {
+    vertical-align: middle;
+    color: #1f2937;
+}
+
+.status-badge {
+    display: inline-block;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.35rem 0.75rem;
+    white-space: nowrap;
+}
+
+.badge-neutral {
+    color: #1f2937;
+    background: #eff1f4;
+    border: 1px solid #d7dde5;
+}
+
+.badge-vulnerable {
+    color: #27303d;
+    background: #e6e9f0;
+    border: 1px solid #d4dae4;
+}
+
+.badge-critical {
+    color: #fff;
+    background: #d7263d;
+}
+
+.table-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+}
+
+.action-link {
+    width: 32px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #2b3340;
+    text-decoration: none;
+    border: 1px solid transparent;
+}
+
+.action-link:hover {
+    background: #f2f4f7;
+    border-color: #d9dde3;
+    color: #101828;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.species-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(17, 24, 39, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1050;
+}
+
+.species-modal-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.species-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 1060;
+    padding: 1rem;
+}
+
+.species-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.species-modal-dialog {
+    width: 100%;
+    max-width: 580px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+    padding: 1.4rem 1.7rem 1.5rem;
+}
+
+.species-modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.species-modal-head h3 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1d2433;
+}
+
+.modal-close-btn {
+    border: none;
+    background: transparent;
+    color: #7a828f;
+    font-size: 1.1rem;
+}
+
+.species-form .form-label {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #2b3340;
+}
+
+.species-form .form-control,
+.species-form .form-select {
+    border: 1px solid #dde1e7;
+    background: #f2f4f7;
+    min-height: 44px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+.species-form .form-control:focus,
+.species-form .form-select:focus {
+    border-color: #4f8a34;
+    box-shadow: 0 0 0 0.2rem rgba(79, 138, 52, 0.2);
+    background: #ffffff;
+}
+
+.species-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.7rem;
+}
+
+.observation-modal-dialog {
+    max-width: 480px;
+    padding: 0.95rem 1rem 1rem;
+}
+
+.bat-measurement-modal-dialog {
+    max-width: 620px;
+}
+
+.observation-fields-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 0.55rem;
+}
+
+.observation-modal-dialog .species-modal-head h3 {
+    font-size: 1.25rem;
+}
+
+.observation-modal-dialog .form-control,
+.observation-modal-dialog .form-select {
+    min-height: 34px;
+    font-size: 0.86rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+.observation-modal-dialog .form-label {
+    font-size: 0.92rem;
+    margin-bottom: 0.22rem;
+}
+
+.observation-modal-dialog .species-modal-actions {
+    margin-top: 0.5rem !important;
+}
+
+.header-admin-pill {
+    background: #e5e7eb;
+    color: #111827;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+}
+
+.table-tag {
+    display: inline-block;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    color: #1f2937;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+}
+
+.filter-select {
+    min-width: 220px;
+    background: #eef0f4;
+    border: 1px solid #dde1e7;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.audit-pill {
+    display: inline-block;
+    border-radius: 10px;
+    font-weight: 700;
+    padding: 0.15rem 0.6rem;
+}
+
+.audit-pill-insert {
+    background: #050b24;
+    color: #ffffff;
+}
+
+.audit-pill-update {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.audit-pill-archive {
+    background: #f3f4f6;
+    color: #111827;
+    border: 1px solid #d1d5db;
+}
+
+.audit-pill-default {
+    background: #f3f4f6;
+    color: #111827;
+}
+
+.recent-activity-card {
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    scrollbar-gutter: stable;
+}
+
+.recent-activity-list {
+    height: 145px !important;
+    max-height: 145px !important;
+    overflow-y: auto !important;
+    padding-right: 8px;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: #2f6a1d #eef1f4;
+}
+
+.recent-activity-list::-webkit-scrollbar {
+    width: 12px;
+}
+
+.recent-activity-list::-webkit-scrollbar-track {
+    background: #eef1f4;
+    border-radius: 999px;
+    margin: 4px 0;
+}
+
+.recent-activity-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #4a8b2f 0%, #255716 100%);
+    border-radius: 999px;
+    border: 2px solid #eef1f4;
+}
+
+.recent-activity-list::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #5aa038 0%, #2f6a1d 100%);
+}
+
+.recent-activity-list::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+.user-status-pill {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 0.2rem 0.6rem;
+    background: #dcfce7;
+    color: #15803d;
+    font-weight: 700;
+    border: 1px solid #86efac;
+}
+
+.observation-fields-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.observation-fields-grid textarea.form-control {
+    min-height: 108px;
+    resize: vertical;
+}
+
+.btn-cancel {
+    border: 1px solid #d6dae0;
+    background: #ffffff;
+    color: #293140;
+    border-radius: 10px;
+    font-weight: 600;
+    padding: 0.55rem 1.2rem;
+}
+
+.card-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.05);
+}
+
+.recent-records-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.recent-record-item {
+    border: 1px solid #d8dde6;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 0.9rem 1rem;
+}
+
+.recent-record-item-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.55rem;
+}
+
+.recent-record-badge {
+    display: inline-block;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #ffffff;
+    color: #1f2937;
+    font-size: 0.86rem;
+    font-weight: 600;
+    padding: 0.2rem 0.65rem;
+}
+
+.recent-record-date {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+.recent-record-title {
+    font-size: 1.05rem;
+    margin: 0 0 0.2rem;
+    color: #111827;
+}
+
+.recent-record-sub {
+    color: #475569;
+    margin: 0 0 0.35rem;
+}
+
+.recent-record-created {
+    color: #64748b;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.edit-form {
+    max-width: 600px;
+}
+
+.edit-form .form-label {
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #2b3340;
+    margin-bottom: 0.5rem;
+}
+
+.edit-form .form-control,
+.edit-form .form-select {
+    border: 1px solid #dde1e7;
+    background: #f2f4f7;
+    min-height: 44px;
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 0.7rem 0.9rem;
+}
+
+.edit-form .form-control:focus,
+.edit-form .form-select:focus {
+    border-color: #4f8a34;
+    box-shadow: 0 0 0 0.2rem rgba(79, 138, 52, 0.2);
+    background: #ffffff;
+}
+
+.edit-form textarea {
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.form-actions .btn {
+    min-width: 140px;
+    font-weight: 600;
+    border-radius: 10px;
+    padding: 0.7rem 1.2rem;
+}
+
+.form-actions .btn-light {
+    border: 1px solid #d6dae0;
+    background: #ffffff;
+    color: #293140;
+}
+
+.form-actions .btn-light:hover {
+    background: #f5f6f8;
+    border-color: #c0c6cc;
+}
+
+.form-actions .btn-success {
+    background-color: #255716;
+    border-color: #255716;
+    color: #ffffff;
+}
+
+.form-actions .btn-success:hover {
+    background-color: #2f6a1d;
+    border-color: #2f6a1d;
+}
+
+@media (max-width: 992px) {
+    .sidebar {
+        width: 240px;
+    }
+
+    .birds-page {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .page-head h1 {
+        font-size: 2rem;
+    }
+
+    .birds-card-head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .species-modal-dialog {
+        max-width: 95%;
+    }
+
+    .species-modal-head h3 {
+        font-size: 1.55rem;
+    }
+
+    .observation-fields-grid {
+        grid-template-columns: 1fr;
+    }
+}
